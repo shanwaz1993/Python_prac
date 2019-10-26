@@ -1,0 +1,54 @@
+#basic tree implementation
+
+class treeCreate:
+    def __init__(self,p,r,l):
+        self.node=p
+        self.right=r
+        self.left=l
+        
+    def show_tree(self,*d):
+        print(d)
+        #print(d['L'])
+        
+        #print('Parent-',self.node,' Right- ',self.right,' Left- ',self.left)
+        
+d={'p':10,'R':20,'L':40}
+#d=[1,2,34]
+#print(d)
+a=treeCreate(10,20,40)
+a.show_tree(*d)
+
+b=treeCreate(20,30,50)
+b.show_tree(*d)
+
+
+#stack in python
+
+#we have pop and append() which can implement this stack in two line with any list.
+
+#reserve string 
+
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+class revse_me:
+    def __init__(self,strng):
+        self.strng=strng
+        #print (self.strng)
+        
+    def reverse(self):
+        words=self.strng.split(' ')
+        print(words)
+        rstr=words[::-1]
+        print(rstr)
+        #rstr=
+        return ' '.join(rstr)
+        
+st="l love shan"
+print(st)
+a=revse_me(st)
+print(a.reverse())
