@@ -52,3 +52,89 @@ st="l love shan"
 print(st)
 a=revse_me(st)
 print(a.reverse())
+
+##count number of once in binary integer
+
+class binaryCon:
+    def __init__(self,num):
+        self.num=int(num)
+    def binConvert(self):
+        binl=[]
+        while(self.num>0):
+            binl.append(self.num%2)
+            self.num=self.num//2
+            binl1=binl[::-1]
+        else:
+        print(binl1,binl1.count(1))
+        return binl1.count(1)
+
+a=binaryCon(10)
+b=binaryCon(15)
+c=binaryCon(17)
+d=binaryCon(0)
+a.binConvert()
+b.binConvert()
+c.binConvert()
+d.binConvert()'''
+
+def countSetBits( n): 
+      
+    # base case 
+    if (n == 0): 
+        return 0
+  
+    else: 
+  
+        # if last bit set add 1 else 
+        # add 0
+        print (n & 1)
+        print(n>>1)
+        return (n & 1) + countSetBits(n >> 1) 
+          
+# Get value from user 
+n = 9
+
+# Function calling 
+print( countSetBits(n))     
+
+
+#Find the misiing iteger from list of integeres
+class miss_num:
+    def num_mis(self,*a):
+        print(a)
+        num=[x+1 for x in a if x+1 not in a]
+        return num[0]
+    
+b=miss_num()
+l1=[0,1,2,3,4,5,6]
+l2=[0,1,2,3,5,6]
+l3=[5,4,2,5,6,7]
+print(b.num_mis(*l1))
+print(b.num_mis(*l2))
+print(b.num_mis(*l3))
+
+
+#create a balanced pre_order tree 
+
+class node:
+    def __init__(self,data):
+        self.data=data
+        print(self.data)
+        self.right=None
+        self.left=None
+        
+
+def add_child(*a):
+    if not a:
+        return
+    mid=len(a)//2
+    root=node(a[mid])
+    root.left=add_child(*a[:mid])
+    root.right=add_child(*a[mid+1:])
+    
+    return root
+
+a=[1,2,3,4,5,6,7,8,9]
+
+r=add_child(*a)
+#r.pre_order()
