@@ -169,3 +169,30 @@ l3=sortme(c)
 l1.insort()
 l2.insort()
 l3.insort()
+
+#buble sort
+
+class sortme:
+    def __init__(self,a):
+        self.a=a
+    def buble(self):
+        i=0
+        ln=len(self.a)
+        while i<ln-1:
+            j=0
+            while j<ln-i-1:
+                #print(self.a,i,j)
+                if self.a[j]>self.a[j+1]:
+                    #print(self.a[j],self.a[j+1])
+                    c=self.a[j]
+                    self.a[j]=self.a[j+1]
+                    self.a[j+1]=c
+                    #print(self.a[j],self.a[j+1])
+                j+=1
+            i+=1
+            print(self.a,i)
+        return self.a
+        
+a=[6,3,4,2]
+l1=sortme(a)
+l=l1.buble()
