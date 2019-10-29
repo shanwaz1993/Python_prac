@@ -196,3 +196,21 @@ class sortme:
 a=[6,3,4,2]
 l1=sortme(a)
 l=l1.buble()
+
+#creating two d array 
+#ways of creating 2D []
+#a=[[row*1 for col in range(0,8)] for row in range(0,8)]
+#print(a)
+a=5*[5*[None]]
+print(a)
+
+i=0
+j=0
+while i<5:
+    while j<5:
+        a[i][j]=1
+        j+=1
+        #print(a)
+    i+=1
+    j=0
+print(a)
