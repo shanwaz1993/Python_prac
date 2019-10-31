@@ -219,15 +219,20 @@ print(a)
 class Graph:
     def __init__(self,a):
         self.gr=a*[a*[0]]
+        self.a=a
+        self.col=0
         self.sptset=a*[None]
-        #print(sptset)
-        #print(self.gr)
     def find_path(self,node):
-        self.sptset[node]=0
-        col=0
-        while self.gr[node][col]>0:
-            
-        
+        self.col+=1
+        self.sptset[node]=node
+        while self.col<len(self.sptset):
+            if self.gr[node][self.col]>0:
+                print(self.sptset,node,self.col)
+                self.find_path(self.col)
+            else:
+                print('else',self.sptset,node,self.col)
+                self.col+=1
+                
 x=Graph(9)
 x.gr = [
         [0, 4, 0, 0, 0, 0, 0, 8, 0], 
@@ -240,5 +245,4 @@ x.gr = [
         [8, 11, 0, 0, 0, 0, 1, 0, 7], 
         [0, 0, 2, 0, 0, 0, 6, 7, 0] 
         ]; 
-#print('outside class',x.gr)
-
+x.find_path(0)
